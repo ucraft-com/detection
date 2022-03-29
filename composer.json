@@ -1,0 +1,39 @@
+{
+    "name": "ucraft-com/detection",
+    "description": "The Detection component helps application detect visitor's browser details and device type. Determine the geographical location of website visitors based on their IP addresses.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Uc\\Detection\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Uc\\Detection\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tigran Mesropyan",
+            "email": "tiko@ucraft.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.1",
+        "hisorange/browser-detect": "dev-stable",
+        "torann/geoip": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "9.5.10"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Uc\\Detection\\DetectionServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Uc\Detection\OperatingSystemDetection;
 
@@ -26,13 +26,33 @@ class Detector
     }
 
     /**
+     * Operating system's human friendly name like Windows XP, Mac 10.
+     *
+     * @return string
+     */
+    public function platformName(): string
+    {
+        return strtolower($this->driver->platformName());
+    }
+
+    /**
      * Operating system's vendor like Linux, Windows, Mac.
      *
      * @return string
      */
-    public function platformFamily() : string
+    public function platformFamily(): string
     {
         return strtolower($this->driver->platformFamily());
+    }
+
+    /**
+     * Operating system's human friendly version like XP, Vista, 10.
+     *
+     * @return string
+     */
+    public function platformVersion(): string
+    {
+        return strtolower($this->driver->platformVersion());
     }
 
     /**
@@ -40,7 +60,7 @@ class Detector
      *
      * @return bool
      */
-    public function isWindows() : bool
+    public function isWindows(): bool
     {
         return $this->driver->isWindows();
     }
@@ -50,7 +70,7 @@ class Detector
      *
      * @return bool
      */
-    public function isLinux() : bool
+    public function isLinux(): bool
     {
         return $this->driver->isLinux();
     }
@@ -60,7 +80,7 @@ class Detector
      *
      * @return bool
      */
-    public function isMac() : bool
+    public function isMac(): bool
     {
         return $this->driver->isMac();
     }
@@ -70,7 +90,7 @@ class Detector
      *
      * @return bool
      */
-    public function isIos() : bool
+    public function isIos(): bool
     {
         return $this->driver->isIos();
     }
@@ -80,7 +100,7 @@ class Detector
      *
      * @return bool
      */
-    public function isAndroid() : bool
+    public function isAndroid(): bool
     {
         return $this->driver->isAndroid();
     }

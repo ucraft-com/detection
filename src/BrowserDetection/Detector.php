@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Uc\Detection\BrowserDetection;
 
@@ -26,21 +26,61 @@ class Detector
     }
 
     /**
+     * Type of the device: [Mobile, Tablet, Desktop, and Bot]
+     *
+     * @return string
+     */
+    public function deviceType(): string
+    {
+        return strtolower($this->driver->deviceType());
+    }
+
+    /**
+     * Browser's human friendly name like Firefox 3.6, Chrome 42.
+     *
+     * @return string
+     */
+    public function browserName(): string
+    {
+        return strtolower($this->driver->browserName());
+    }
+
+    /**
+     * Browser's human friendly version string.
+     *
+     * @return string
+     */
+    public function browserVersion(): string
+    {
+        return strtolower($this->driver->browserVersion());
+    }
+
+    /**
+     * Browser's engine like: Blink, WebKit, Gecko.
+     *
+     * @return string
+     */
+    public function browserEngine(): string
+    {
+        return strtolower($this->driver->browserEngine());
+    }
+
+    /**
      * Browser's vendor like Chrome, Firefox, Opera.
      *
      * @return string
      */
-    public function browserFamily() : string
+    public function browserFamily(): string
     {
         return strtolower($this->driver->browserFamily());
     }
 
     /**
-     * Is this a chrome browser.
+     * Is this a Chrome browser.
      *
      * @return bool
      */
-    public function isChrome() : bool
+    public function isChrome(): bool
     {
         return $this->driver->isChrome();
     }
@@ -50,7 +90,7 @@ class Detector
      *
      * @return bool
      */
-    public function isFirefox() : bool
+    public function isFirefox(): bool
     {
         return $this->driver->isFirefox();
     }
@@ -60,7 +100,7 @@ class Detector
      *
      * @return bool
      */
-    public function isOpera() : bool
+    public function isOpera(): bool
     {
         return $this->driver->isOpera();
     }
@@ -70,7 +110,7 @@ class Detector
      *
      * @return bool
      */
-    public function isSafari() : bool
+    public function isSafari(): bool
     {
         return $this->driver->isSafari();
     }
@@ -80,7 +120,7 @@ class Detector
      *
      * @return bool
      */
-    public function isIE() : bool
+    public function isIE(): bool
     {
         return $this->driver->isIE();
     }
@@ -90,7 +130,7 @@ class Detector
      *
      * @return bool
      */
-    public function isEdge() : bool
+    public function isEdge(): bool
     {
         return $this->driver->isEdge();
     }
@@ -100,7 +140,7 @@ class Detector
      *
      * @return bool
      */
-    public function isInApp() : bool
+    public function isInApp(): bool
     {
         return $this->driver->isInApp();
     }

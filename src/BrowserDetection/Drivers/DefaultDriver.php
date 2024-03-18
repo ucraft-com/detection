@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Uc\Detection\BrowserDetection\Drivers;
 
@@ -14,11 +14,51 @@ use hisorange\BrowserDetect\Parser;
 class DefaultDriver implements BrowserDetectionDriverInterface
 {
     /**
+     * Type of the device: [Mobile, Tablet, Desktop, and Bot]
+     *
+     * @return string
+     */
+    public function deviceType(): string
+    {
+        return Parser::deviceType();
+    }
+
+    /**
+     * Browser's human friendly name like Firefox 3.6, Chrome 42.
+     *
+     * @return string
+     */
+    public function browserName(): string
+    {
+        return Parser::browserName();
+    }
+
+    /**
+     * Browser's human friendly version string.
+     *
+     * @return string
+     */
+    public function browserVersion(): string
+    {
+        return Parser::browserVersion();
+    }
+
+    /**
+     * Browser's engine like: Blink, WebKit, Gecko.
+     *
+     * @return string
+     */
+    public function browserEngine(): string
+    {
+        return Parser::browserEngine();
+    }
+
+    /**
      * Browser's vendor like Chrome, Firefox, Opera.
      *
      * @return string
      */
-    public function browserFamily() : string
+    public function browserFamily(): string
     {
         return Parser::browserFamily();
     }
@@ -28,7 +68,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isChrome() : bool
+    public function isChrome(): bool
     {
         return Parser::isChrome();
     }
@@ -38,7 +78,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isFirefox() : bool
+    public function isFirefox(): bool
     {
         return Parser::isFirefox();
     }
@@ -48,7 +88,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isOpera() : bool
+    public function isOpera(): bool
     {
         return Parser::isOpera();
     }
@@ -58,7 +98,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isSafari() : bool
+    public function isSafari(): bool
     {
         return Parser::isSafari();
     }
@@ -68,7 +108,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isIE() : bool
+    public function isIE(): bool
     {
         return Parser::isIE();
     }
@@ -78,7 +118,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isEdge() : bool
+    public function isEdge(): bool
     {
         return Parser::isEdge();
     }
@@ -88,7 +128,7 @@ class DefaultDriver implements BrowserDetectionDriverInterface
      *
      * @return bool
      */
-    public function isInApp() : bool
+    public function isInApp(): bool
     {
         return Parser::isInApp();
     }

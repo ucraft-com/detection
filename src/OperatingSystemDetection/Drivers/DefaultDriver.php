@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Uc\Detection\OperatingSystemDetection\Drivers;
 
@@ -16,13 +16,33 @@ use function stripos;
 class DefaultDriver implements OperatingSystemDetectionDriverInterface
 {
     /**
+     * Operating system's human friendly name like Windows XP, Mac 10.
+     *
+     * @return string
+     */
+    public function platformName(): string
+    {
+        return Parser::platformName();
+    }
+
+    /**
      * Operating system's vendor like Linux, Windows, Mac.
      *
      * @return string
      */
-    public function platformFamily() : string
+    public function platformFamily(): string
     {
         return Parser::platformFamily();
+    }
+
+    /**
+     * Operating system's human friendly version like XP, Vista, 10.
+     *
+     * @return string
+     */
+    public function platformVersion(): string
+    {
+        return Parser::platformVersion();;
     }
 
     /**
@@ -30,7 +50,7 @@ class DefaultDriver implements OperatingSystemDetectionDriverInterface
      *
      * @return bool
      */
-    public function isWindows() : bool
+    public function isWindows(): bool
     {
         return Parser::isWindows();
     }
@@ -40,7 +60,7 @@ class DefaultDriver implements OperatingSystemDetectionDriverInterface
      *
      * @return bool
      */
-    public function isLinux() : bool
+    public function isLinux(): bool
     {
         return Parser::isLinux();
     }
@@ -50,7 +70,7 @@ class DefaultDriver implements OperatingSystemDetectionDriverInterface
      *
      * @return bool
      */
-    public function isMac() : bool
+    public function isMac(): bool
     {
         return false !== stripos(Parser::platformFamily(), 'mac');
     }
@@ -60,7 +80,7 @@ class DefaultDriver implements OperatingSystemDetectionDriverInterface
      *
      * @return bool
      */
-    public function isIos() : bool
+    public function isIos(): bool
     {
         return false !== stripos(Parser::platformFamily(), 'ios');
     }
@@ -70,7 +90,7 @@ class DefaultDriver implements OperatingSystemDetectionDriverInterface
      *
      * @return bool
      */
-    public function isAndroid() : bool
+    public function isAndroid(): bool
     {
         return Parser::isAndroid();
     }

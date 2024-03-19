@@ -23,7 +23,7 @@
     "require": {
         "php": ">=8.0",
         "torann/geoip": "^3.0",
-        "hisorange/browser-detect": "^5.0.3"
+        "hisorange/browser-detect": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^7.0",

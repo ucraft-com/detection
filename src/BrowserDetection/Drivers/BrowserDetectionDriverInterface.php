@@ -94,4 +94,32 @@ interface BrowserDetectionDriverInterface
      * @return bool
      */
     public function isInApp(): bool;
+
+    /**
+     * Is this a desktop computer.
+     *
+     * @return bool
+     */
+    public function isDesktop(): bool;
+
+    /**
+     * Is this a mobile device.
+     *
+     * @return bool
+     */
+    public function isMobile(): bool;
+
+    /**
+     * Is this a tablet device.
+     *
+     * @return bool
+     */
+    public function isTablet(): bool;
+
+    /**
+     * Is this a crawler / bot.
+     *
+     * @return bool
+     */
+    public function isBot(): bool;
 }

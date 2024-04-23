@@ -17,6 +17,7 @@ class BrowserDetectionTest extends TestCase
         $browserDetector = $this->getDetectorInstance();
 
         $this->assertEquals('desktop', $browserDetector->deviceType());
+        $this->assertTrue($browserDetector->isDesktop());
     }
 
     public function testDeviceType_ReturnsMobile(): void
@@ -26,6 +27,7 @@ class BrowserDetectionTest extends TestCase
         $browserDetector = $this->getDetectorInstance();
 
         $this->assertEquals('mobile', $browserDetector->deviceType());
+        $this->assertTrue($browserDetector->isMobile());
     }
 
     public function testBrowserFamily_ReturnsBrowserFamilyName(): void

@@ -144,4 +144,44 @@ class Detector
     {
         return $this->driver->isInApp();
     }
+
+    /**
+     * Is this a desktop computer.
+     *
+     * @return bool
+     */
+    public function isDesktop(): bool
+    {
+        return $this->driver->isDesktop();
+    }
+
+    /**
+     * Is this a mobile device.
+     *
+     * @return bool
+     */
+    public function isMobile(): bool
+    {
+        return $this->driver->isMobile();
+    }
+
+    /**
+     * Is this a tablet device.
+     *
+     * @return bool
+     */
+    public function isTablet(): bool
+    {
+        return $this->driver->isTablet();
+    }
+
+    /**
+     * Is this a crawler / bot.
+     *
+     * @return bool
+     */
+    public function isBot(): bool
+    {
+        return $this->driver->isBot();
+    }
 }

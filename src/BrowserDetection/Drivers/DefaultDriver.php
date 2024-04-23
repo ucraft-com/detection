@@ -132,4 +132,44 @@ class DefaultDriver implements BrowserDetectionDriverInterface
     {
         return Parser::isInApp();
     }
+
+    /**
+     * Is this a desktop computer.
+     *
+     * @return bool
+     */
+    public function isDesktop(): bool
+    {
+        return Parser::isDesktop();
+    }
+
+    /**
+     * Is this a mobile device.
+     *
+     * @return bool
+     */
+    public function isMobile(): bool
+    {
+        return Parser::isMobile();
+    }
+
+    /**
+     * Is this a tablet device.
+     *
+     * @return bool
+     */
+    public function isTablet(): bool
+    {
+        return Parser::isTablet();
+    }
+
+    /**
+     * Is this a crawler / bot.
+     *
+     * @return bool
+     */
+    public function isBot(): bool
+    {
+        return Parser::isBot();
+    }
 }
